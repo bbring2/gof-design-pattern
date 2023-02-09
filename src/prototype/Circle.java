@@ -1,8 +1,15 @@
 package prototype;
 
-public class Circle {
+public class Circle extends Shape{
 
-    private int x, y, z;
+    private int x, y, r;
+
+    public Circle(int x, int y, int r) {
+        super();
+        this.x = x;
+        this.y = y;
+        this.r = r;
+    }
 
     public int getX() {
         return x;
@@ -20,16 +27,19 @@ public class Circle {
         this.y = y;
     }
 
-    public int getZ() {
-        return z;
+    public int getR() {
+        return r;
     }
 
-    public void setZ(int z) {
-        this.z = z;
+    public void setR(int z) {
+        this.r = z;
     }
 
     public Circle copy() throws CloneNotSupportedException {
         Circle circle = (Circle) clone();
+        circle.x += 1;
+        circle.y += 1;
+
         return circle;
     }
 }
